@@ -20,12 +20,17 @@ class _StepThreeState extends State<StepThree> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
+          children: [
+            const Text(
               "Steps three",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  widget.controller.reset();
+                },
+                child: const Text("Reset"))
           ],
         ),
       ),
