@@ -33,7 +33,7 @@ class StepperIndex {
   }
 
   bool reset() {
-    StepperModel().notifier.currentIndex = 0;
+    StepperModel().notifier.currentIndex = -1;
     return true;
   }
 }
