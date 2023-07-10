@@ -23,4 +23,8 @@ class StepperAController {
   void reset() {
     StepperIndex().reset();
   }
+
+  void go({required int index}) {
+    StepperIndex().go(index);
+  }
 }

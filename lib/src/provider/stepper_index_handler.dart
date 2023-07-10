@@ -36,4 +36,9 @@ class StepperIndex {
     StepperModel().notifier.currentIndex = -1;
     return true;
   }
+
+  bool go(int x) {
+    StepperModel().notifier.currentIndex = x;
+    return true;
+  }
 }
