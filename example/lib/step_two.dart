@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stepper_a/stepper_a.dart';
 
-
 class StepTwo extends StatefulWidget {
   final StepperAController controller;
 
@@ -23,6 +22,11 @@ class _StepTwoState extends State<StepTwo> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ElevatedButton(
+                onPressed: () {
+                  widget.controller.go(index: 3);
+                },
+                child: const Text("Go")),
             const Text(
               "Address info",
               textAlign: TextAlign.center,
@@ -33,8 +37,8 @@ class _StepTwoState extends State<StepTwo> {
               child: TextFormField(
                 minLines: 3,
                 maxLines: 4,
-                onChanged: (c){
-                //  widget.notifier.onUpdate();
+                onChanged: (c) {
+                  //  widget.notifier.onUpdate();
                 },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(), labelText: "Present Address"),
@@ -50,13 +54,11 @@ class _StepTwoState extends State<StepTwo> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
-                onChanged: (c){
-                  setState(() {
-
-                  });
+                onChanged: (c) {
+                  setState(() {});
                 },
                 obscureText: false,
-                validator:  (value) {
+                validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your Address';
                   }
